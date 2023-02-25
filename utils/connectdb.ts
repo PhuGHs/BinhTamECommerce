@@ -10,7 +10,6 @@ export async function connectToDatabase() {
         family: 4 // Use IPv4, skip trying IPv6
       };
 
-    console.log('x');
     await mongoose.connect('mongodb+srv://lephu:vanphudh2003@binhtamshop.pijpb2i.mongodb.net/?retryWrites=true&w=majority', options);
     console.log('Connected to MongoDB');
   } catch (error) {

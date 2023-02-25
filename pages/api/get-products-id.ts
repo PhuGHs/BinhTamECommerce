@@ -5,7 +5,7 @@ import { connectToDatabase } from "@/utils/connectdb";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     await connectToDatabase();
-    const data : IProduct[] = await ProductModel.find({});
+    const data : IProduct[] = await ProductModel.find({}, {id: 1});
 
     res.status(200).json(data);
 }
