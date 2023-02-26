@@ -3,6 +3,7 @@ import { Document } from "mongodb"
 export interface IProduct extends Document {
     id: string,
     imgURL: string,
+    imageList: Array<string>
     productName: string,
     price: Number,
     category: string,

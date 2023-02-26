@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import ProductList  from '@/components/ui/ProductList';
 import CarouselSlider from "@/components/banner/CarouselSlider";
 import { IProduct } from "@/utils/interfaces";
+import { getData } from "@/utils/fetchData";
 
 interface Props {
     products: IProduct[]
@@ -15,8 +16,7 @@ const HomePage : React.FC<Props> = ({products}) => {
 }
 
 export async function getStaticProps() {
-    const res = await fetch(`${process.env.SERVER}/api/get-products`);
-    const data : IProduct[] = await res.json();
+    const data : IProduct[] = await getData('get-products');
 
     return {
         props: {

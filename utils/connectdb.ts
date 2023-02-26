@@ -2,6 +2,10 @@ import mongoose, { ConnectOptions } from 'mongoose';
 
 export async function connectToDatabase() {
   try {
+    if(mongoose.connections[0].readyState) {
+      console.log('already connected');
+      return;
+    }
     const options : ConnectOptions = {
         autoIndex: false, // Don't build indexes
         maxPoolSize: 10, // Maintain up to 10 socket connections

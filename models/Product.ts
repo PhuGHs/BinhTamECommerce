@@ -12,6 +12,8 @@ const productSchema = new mongoose.Schema<IProduct>({
         type: String,
         required: true,
     }, 
+    imageList: [{type: String, required: true}]
+    ,
     productName: {
         type: String,
         required: true,
