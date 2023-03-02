@@ -5,11 +5,26 @@ export interface IProduct extends Document {
     imgURL: string,
     imageList: Array<string>
     productName: string,
-    price: Number,
+    price: number,
     category: string,
     typeOfProduct: string,
-    inStock: Number,
-    sold: Number,
+    inStock: number,
+    sold: number,
+}
+
+export interface CartState {
+    items: Array<IOrderingProduct>,
+    totalQuantity: number,
+    changed: boolean,
+}
+
+export interface IOrderingProduct extends Document {
+    id: string,
+    img: string,
+    productName: string,
+    price: number,
+    totalPrice: number,
+    quantity: number,
 }
 
 export interface ICategory extends Document {

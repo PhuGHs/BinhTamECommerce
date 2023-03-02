@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useRouter } from "next/router";
 import { IProduct } from "@/utils/interfaces";
+import { convertToVND } from "@/utils/convertToVND";
 
 interface Props {
   item: IProduct
@@ -23,8 +24,8 @@ const Product: React.FC<Props> = ({ item }) => {
         <Card.Img className={classes.image} variant="top" src={item.img} />
         <Card.Body>
           <Card.Title className={classes.title}>{item.productName}</Card.Title>
-          <Card.Text className={classes.price}>
-            {item.price.toString() + ' VND'}
+          <Card.Text>
+            <h2 className={classes.price}>{convertToVND(item.price)}</h2>
           </Card.Text>
           <Button className={classes.buyBtn} onClick={showDetailPageHandler}>Mua ngay</Button>
         </Card.Body>

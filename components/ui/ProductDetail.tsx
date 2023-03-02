@@ -7,6 +7,10 @@ import { IProduct } from "@/utils/interfaces";
 import classes from './ProductDetail.module.css';
 
 import { useState } from "react";
+import { convertToVND } from "@/utils/convertToVND";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { cartActions } from "@/store/cart-slice";
 
 interface Props {
   product: IProduct
@@ -14,7 +18,16 @@ interface Props {
 
 const ProductDetail : React.FC<Props> = ({product}) => {
   const imageList : Array<string> = product.imageList;
+  const dispatch : Dispatch = useDispatch();
   const [currentImage, setCurrentImage] = useState<string>(product.img);
+  const addItemToCartHandler = () => {
+    dispatch(cartActions.addItemToCart({
+      id: product.id,
+      productName: product.productName,
+      img: product.img,
+      price: product.price,
+    }))
+  }
   
   const handleImageClick = (image : string) => {
     setCurrentImage(image);
@@ -30,7 +43,7 @@ const ProductDetail : React.FC<Props> = ({product}) => {
                 <Col xs={3} className={classes.thumbnail_list}>
                   {imageList !== null && imageList.map((image : string) => (
                     <Image 
-                      className={classes.image_thumbnail} 
+                      className={image === currentImage ? classes.selected : ''} 
                       src={image}
                       onClick={() => handleImageClick(image)}/>
                   ))}
@@ -47,7 +60,7 @@ const ProductDetail : React.FC<Props> = ({product}) => {
                 <h2>{product.productName}</h2>
               </Row>
               <Row>
-                <h3 className={classes.price}>{product.price.toString()}</h3>
+                <h3 className={classes.price}>{convertToVND(product.price)}</h3>
               </Row>
               <Row>SoLuong</Row>
               <Row>
@@ -55,7 +68,7 @@ const ProductDetail : React.FC<Props> = ({product}) => {
                   <Button>Mua Ngay</Button>
                 </Col>
                 <Col>
-                  <Button>Them vao gio hang</Button>
+                  <Button onClick={addItemToCartHandler}>Them vao gio hang</Button>
                 </Col>
               </Row>
             </Container>

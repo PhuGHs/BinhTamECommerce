@@ -1,0 +1,26 @@
+.row, .data {
+    padding: 20px;
+    text-align: center;
+}
+
+.row {
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.data_first {
+    padding: 20px;
+    text-align: left;
+}
+
+.data_first img {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.data button {
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #DC8449;
+}

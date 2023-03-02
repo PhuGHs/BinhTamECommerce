@@ -3,6 +3,7 @@ import ProductList  from '@/components/ui/ProductList';
 import CarouselSlider from "@/components/banner/CarouselSlider";
 import { IProduct } from "@/utils/interfaces";
 import { getData } from "@/utils/fetchData";
+import Modal from "react-bootstrap/Modal";
 
 interface Props {
     products: IProduct[]
@@ -22,7 +23,7 @@ export async function getStaticProps() {
         props: {
             products: data,
         },
-        revalidate: 1,
+        revalidate: 10,
     }
 }
 

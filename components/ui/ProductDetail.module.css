@@ -19,17 +19,17 @@
     gap: 1rem;
 }
 
-.thumbnail_list .image_thumbnail {
+.thumbnail_list img {
     width: 100%;
     height: auto;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 2px solid #EEEEEE;
     transition: border-color 0.2s ease-in-out;
 }
 
-.thumbnail_list .image_thumbnail:hover,
-.thumbnail_list .image_thumbnail.selected {
-  border-color: #007bff;
+.thumbnail_list img:hover,
+.thumbnail_list img.selected {
+  border-color: black;
 }
 
 .imageContainer {

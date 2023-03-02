@@ -1,9 +1,13 @@
-import { faCaretRight, faMagnifyingGlass, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight, faMagnifyingGlass, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classes from './MainNavigation.module.css';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
 const MainNavigation : React.FC<{}> = () => {
+    const data = useSelector((state : RootState) => state.cart);
+
     return (
       <header className={classes.header}>
         <div className={classes.logo}>
@@ -64,9 +68,10 @@ const MainNavigation : React.FC<{}> = () => {
             </button>
           </div>
           <div className={classes.right}>
-            <button className={classes.rightbtn}>
+            <Link href='/Cart' className={classes.cart_button}>
+              <span className={classes.cart_button_count}>{data.items.length.toString()}</span>
               <FontAwesomeIcon icon={faCartShopping} />
-            </button>
+            </Link>
           </div>
           <div className={classes.right}>
             <button className={classes.rightbtn}>
