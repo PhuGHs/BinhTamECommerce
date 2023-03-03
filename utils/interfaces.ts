@@ -25,6 +25,7 @@ export interface IOrderingProduct extends Document {
     price: number,
     totalPrice: number,
     quantity: number,
+    isSelected: boolean,
 }
 
 export interface ICategory extends Document {

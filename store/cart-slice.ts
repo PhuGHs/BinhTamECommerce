@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IOrderingProduct } from "@/utils/interfaces";
-import { Dispatch } from "@reduxjs/toolkit";
 import { CartState } from "@/utils/interfaces";
 
 const initialState : CartState = {
@@ -29,6 +28,7 @@ const cartSlice = createSlice({
                     quantity: 1,
                     price: newItem.price,
                     totalPrice: newItem.price,
+                    isSelected: true,
                 })
             }
             else {

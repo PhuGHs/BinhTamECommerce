@@ -1,5 +1,5 @@
 import { IOrderingProduct } from "@/utils/interfaces";
-import React, {Fragment} from "react";
+import React from "react";
 import CartItems from "@/components/ui/CartItems";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
