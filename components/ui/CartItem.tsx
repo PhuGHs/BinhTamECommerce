@@ -43,7 +43,7 @@ const CartItem: React.FC<Props> = ({item}) => {
       </td>
       <td className={classes.data}>{convertToVND(item.price)}</td>
       <td className={classes.data}>{item.quantity}</td>
-      <td className={classes.data}>{convertToVND(item.price)}</td>
+      <td className={classes.data}>{convertToVND(item.totalPrice)}</td>
       <td className={classes.data}>
         <button onClick={removeCartItemHandler}>Xoá</button>
       </td>

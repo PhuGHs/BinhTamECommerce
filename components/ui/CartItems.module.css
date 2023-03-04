@@ -13,21 +13,146 @@
 }
 
 .cartPage {
+    width: 100%;
+}
+
+.cartPage .cart {
     width: 80%;
     background-color: #fff;
     border-radius: 8px;
     height: fit-content;
-    margin: 100px auto;
+    min-height: 500px;
+    margin: 100px auto 25px auto;
+    padding: 20px;
 }
 
 .table {
-    text-align: center;
-    width: 90%;
+    margin: 0 auto;
+    width: 80%;
 }
 
-.title {
+.cartPage .title {
     text-align: center;
     color: #DC8449;
+}
+
+/* VOUCHER */
+.discount {
+    padding: 10px;
+}
+
+.discount .first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 25%;
+}
+
+.discount .first .first_1 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.first_1 p {
+    color: #2F80ED;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.first_1 .ticketIcon {
+    color: #2F80ED;
+    font-size: 1.4rem;
+}
+
+.discount .first .first_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first_2 .link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: auto 0;
+    font-weight: 500;
+}
+
+.first_2 .angleRight {
+    color: #2F80ED;
+    font-size: 1.2rem;
+    margin: auto 0 auto 2px;
+}
+
+/* SUMMARY */
+
+.summaryContainer {
+    width: 60%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    min-height: 170px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.summaryContainer .discount {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 55%;
+}
+
+.summaryContainer .summary {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 40%;
+}
+
+.summaryContainer .summary {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.summaryContainer .summary .thanhtien {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.thanhtien p {
+    font-size: 1.1rem;
+}
+
+.summaryContainer .summary .tongsotien {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.summaryContainer .summary .tongsotien p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #DF2E38;
+}
+
+.summaryContainer .summary .thanhtoan_button {
+    width: 100%;
+    text-align: center;
+    height: 30%;
+}
+
+.summaryContainer .summary .thanhtoan_button .button {
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    background-color: #DF2E38;
+    color: #fff;
+    border: none;
+    font-weight: 600;
 }
 
 .round {
@@ -71,4 +196,20 @@
 
 .round input[type="checkbox"]:checked+label:after {
     opacity: 1;
+}
+
+.notifContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.notifContainer h2 {
+    text-align: center;
+}
+
+.notifContainer img {
+    width: 50%;
+    height: 50%;
+    margin: auto;
 }
