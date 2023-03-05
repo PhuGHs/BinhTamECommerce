@@ -74,9 +74,9 @@ const MainNavigation : React.FC<{}> = () => {
             </Link>
           </div>
           <div className={classes.right}>
-            <button className={classes.rightbtn}>
+            <Link href='/Login' className={classes.rightbtn}>
               <FontAwesomeIcon icon={faUser} />
-            </button>
+            </Link>
           </div>
         </div>
       </header>

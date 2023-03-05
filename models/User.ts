@@ -19,11 +19,17 @@ const UserSchema = new mongoose.Schema<IUser>({
         type: String,
         default: 'user'
     },
-    avatar: {
+    address: {
         type: String,
-    }
+    },
+    orders: [
+        {
+            type: String,
+            required: true
+        }
+    ]
 }, {
     timestamps: true,
 })
 
-export const UserModel : Model<IUser> = models.user || model<IUser>('user', UserSchema);
+export const UserModel : Model<IUser> = models.user || model<IUser>('users', UserSchema);

@@ -1,4 +1,4 @@
-import { Document } from "mongodb"
+import { Document, ObjectId } from "mongodb"
 
 export interface IProduct extends Document {
     id: string,
@@ -38,4 +38,24 @@ export interface IUser extends Document{
     password: string,
     role: string,
     avatar: string,
+}
+
+export interface IOrder extends Document {
+    user: ObjectId,
+    status: string,
+    items: [
+        {
+            product: ObjectId,
+            quantity: number,
+            price: number
+        }
+    ],
+    total: number
+}
+
+export interface ITransactions extends Document {
+    user: ObjectId,
+    order: ObjectId,
+    amount: number,
+    status: string,
 }

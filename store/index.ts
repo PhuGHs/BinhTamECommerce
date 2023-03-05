@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartSlice from "./cart-slice";
 
-const store = configureStore({
+const Store = configureStore({
     reducer: {cart: cartSlice.reducer},
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof Store.getState>
 
-export default store;
+export default Store;

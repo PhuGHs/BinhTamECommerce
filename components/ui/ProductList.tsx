@@ -1,4 +1,4 @@
-import React, { Fragment, HtmlHTMLAttributes } from "react";
+import React, { Fragment } from "react";
 import Product from "./Product";
 import classes from './ProductList.module.css';
 import { useState } from "react";

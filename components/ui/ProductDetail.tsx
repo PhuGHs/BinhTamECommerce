@@ -12,11 +12,15 @@ import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { cartActions } from "@/store/cart-slice";
 
+import { toast } from "react-toastify";
+
 interface Props {
   product: IProduct
 }
 
 const ProductDetail : React.FC<Props> = ({product}) => {
+  const notify = () => toast.success("Thêm vào giỏ hàng thành công!");
+
   const imageList : Array<string> = product.imageList;
   const dispatch : Dispatch = useDispatch();
   const [currentImage, setCurrentImage] = useState<string>(product.img);
@@ -26,7 +30,8 @@ const ProductDetail : React.FC<Props> = ({product}) => {
       productName: product.productName,
       img: product.img,
       price: product.price,
-    }))
+    }));
+    notify();
   }
   
   const handleImageClick = (image : string) => {
