@@ -16,7 +16,11 @@ const HomePage : React.FC<Props> = ({products}) => {
 }
 
 export async function getStaticProps() {
-    const data : IProduct[] = await getData('get-products');
+    const res = await fetch('http://localhost:3000/api/products', {
+        method: 'GET'
+    });
+
+    const data = await res.json();
 
     return {
         props: {

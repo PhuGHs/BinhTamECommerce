@@ -25,7 +25,6 @@ const UserSchema = new mongoose.Schema<IUser>({
     orders: [
         {
             type: String,
-            required: true
         }
     ]
 }, {

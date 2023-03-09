@@ -37,7 +37,8 @@ export interface IUser extends Document{
     email: string,
     password: string,
     role: string,
-    avatar: string,
+    address: string,
+    orders: Array<string>
 }
 
 export interface IOrder extends Document {
@@ -58,4 +59,10 @@ export interface ITransactions extends Document {
     order: ObjectId,
     amount: number,
     status: string,
+}
+
+export interface UserData {
+    errCode: number,
+    message: string,
+    user?: IUser
 }

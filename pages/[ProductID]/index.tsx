@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import ProductDetail from "@/components/ui/ProductDetail";
 import { IProduct } from "@/utils/interfaces";
-import { getData } from "@/utils/fetchData";
 
 interface Props {
     product : IProduct
@@ -13,19 +12,24 @@ const DetailPage : React.FC<Props> = ({product}) => {
     </Fragment>
 }
 
-export async function getStaticPaths() {
-    const products = await getData('get-products-id');
-    return {
-        fallback: false,
-        paths: products.map((product: IProduct) => ({
-            params: {ProductID: product.id}
-        }))
-    }
-}
+// export async function getStaticPaths() {
+//     const products = await getData('get-products-id');
+//     return {
+//         fallback: false,
+//         paths: products.map((product: IProduct) => ({
+//             params: {ProductID: product.id}
+//         }))
+//     }
+// }
 
-export async function getStaticProps(context : any) {
+export async function getServerSideProps(context : any) {
     const productId = context.params.ProductID;
-    const product : IProduct = await getData(`get-specificProduct?id=${productId}`)
+    const res = await fetch(`http://localhost:3000/api/products/${productId}`,
+    {
+        method: 'GET'
+    })
+    
+    const product = await res.json();
 
     console.log(productId);
 
