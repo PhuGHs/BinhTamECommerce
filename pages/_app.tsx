@@ -7,17 +7,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import type { AppProps } from 'next/app'
 import Layout from '@/components/Layout/Layout'
 import { Provider } from 'react-redux';
+import { SessionProvider } from 'next-auth/react';
 import Store from '@/store';
 
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: { session, ...pageProps} }: AppProps) {
   return (
-    <Provider store={Store}>
+   <SessionProvider session={session}>
+     <Provider store={Store}>
       <Layout>
         <ToastContainer autoClose={1500} limit={3}/>
         <Component {...pageProps} />
       </Layout>
     </Provider>
+   </SessionProvider>
   );
 }
 

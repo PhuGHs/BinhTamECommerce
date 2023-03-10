@@ -48,6 +48,7 @@ const ProductDetail : React.FC<Props> = ({product}) => {
                 <Col xs={3} className={classes.thumbnail_list}>
                   {imageList !== null && imageList.map((image : string) => (
                     <Image 
+                    key={image}
                       className={image === currentImage ? classes.selected : ''} 
                       src={image}
                       onClick={() => handleImageClick(image)}/>

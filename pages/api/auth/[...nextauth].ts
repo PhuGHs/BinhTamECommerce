@@ -31,6 +31,7 @@ export const authOptions : NextAuthOptions = {
           if(res.ok && user.errCode === 0) {
             return user.user;
           }
+          else
           return null;
         },
       }),

@@ -17,6 +17,7 @@ function LoginPage() {
   const password = useRef<HTMLInputElement>(null);
 
   const handleLoginOnSubmit = async () => {
+    console.log(email.current?.value);
     const result = await signIn("credentials", {
         email: email.current?.value,
         password: password.current?.value,
