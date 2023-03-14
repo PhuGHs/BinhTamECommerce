@@ -26,6 +26,7 @@ const handleUserLogin = (email: string, password: string)  => {
       }
     } catch (e) {
       console.log(e);
+      reject(e);
     }
   });
 };
@@ -60,7 +61,7 @@ const checkUserEmail = (email : string) => {
 const getUsers = async () => {
     try {
         await connectToDatabase();
-        const users : IUser[] | null = await UserModel.find({});
+        const users : IUser[] | null = await UserModel.find({}); // => promise(.) 
         if(!users) {
             return []
         }

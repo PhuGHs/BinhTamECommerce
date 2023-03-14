@@ -19,7 +19,7 @@ const MainNavigation: React.FC<{}> = () => {
     <header className={classes.header}>
       <div className={classes.logo}>
         <Link href="/">
-          <img src="logo.png" alt="logo.png" />
+          <img src="logo.png" alt="logo.png"/>
         </Link>
       </div>
       <nav>
